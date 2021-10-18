@@ -1,18 +1,16 @@
+
 package mavendemo.tests;
-
-
-
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hamcrest.BaseMatcher;
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
-import org.hamcrest.StringDescription;
-import org.junit.Test;
-
+// import org.hamcrest.BaseMatcher;
+// import org.hamcrest.Description;
+// import org.hamcrest.Matcher;
+// import org.hamcrest.StringDescription;
+import org.junit.jupiter.api.Test;
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.assertThat;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class HamcrestExamples {
@@ -37,7 +35,7 @@ public class HamcrestExamples {
 		assertThat(d, is(not(1.4)));
 	}
 	
-	@Test
+	
 	public void assertThatCollections1(){
 		List<String> list = new ArrayList<String>(){
 			{
