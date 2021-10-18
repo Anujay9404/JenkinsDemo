@@ -7,7 +7,7 @@ pipeline {
         stage('Clean') {
             steps {
                  echo 'Cleaning..'
-                 sh 'mvn -B -DskipTests clean'
+                 bat 'mvn -B -DskipTests clean'
             }
         }
         
