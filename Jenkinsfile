@@ -16,11 +16,7 @@ pipeline {
                 echo 'test app stage...'
           
             }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
+            
         }
         
         stage('Integartion') {
