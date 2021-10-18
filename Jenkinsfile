@@ -14,14 +14,28 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'test app stage...'
-          
+                bat 'mvn test'
+        
+            }
+             post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
             }
             
         }
         
-        stage('Integartion') {
+        stage('Package') {
             steps {
-                echo 'third stage'
+                echo 'mvn install'
+            }
+            post {
+                success{
+                    bat 'echo "Packaging done"'
+                }
+                failure{
+                    bat 'echo "Packaging failure"'
+                }
             }
         }
         
